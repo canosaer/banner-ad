@@ -49,14 +49,23 @@ body{
 	width: 100%;
 	height: 100%;
 	background: lightgray;
-
+	z-index: 1;
 }
 
 .frame2{
-	display: none;
-	// display: grid;
+	// display: none;
+	background: white;
+	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: 240px;
+	z-index: 2;
+	position: absolute;
+	width: 0rem;
+	height: 0rem;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 999rem;
 	
 
 	&__text{
@@ -64,7 +73,7 @@ body{
 		place-self: center center;
 		font-size: 1.6rem;
 		text-align: center;
-		font-weight: bold;
+		opacity: 0;
 	}
 }
 
@@ -72,6 +81,7 @@ body{
 	// display: grid;
 	display: none;
 	@include mixins.data-frame;
+	z-index: 3;
 
 	&__years-row{
 		@include mixins.data-heading;
@@ -90,6 +100,7 @@ body{
 	display: none;
 	// display: grid;
 	@include mixins.data-frame;
+	z-index: 4;
 
 	&__rating-row{
 		@include mixins.data-heading;
@@ -110,6 +121,7 @@ body{
 	// display: grid;
 	display: none;
 	@include mixins.data-frame;
+	z-index: 5;
 
 	&__backers{
 		@include mixins.data-heading;
@@ -125,6 +137,7 @@ body{
 	// display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: 240px;
+	z-index: 6;
 
 	&__logo{
 		grid-row: 1/2;
@@ -148,6 +161,7 @@ body{
 	grid-template-columns: 1fr;
 	grid-auto-rows: auto;
   	background: lightgray;
+	z-index: 7;
 
 	&__logo{
 		@include mixins.logo-style;
@@ -176,7 +190,7 @@ body{
 		font-size: 0.75rem;
 		line-height: 1.5;
 		margin-right: -0.25rem;
-		z-index: 1;
+		z-index: 8;
 	}
 
 	&__price{

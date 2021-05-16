@@ -5,6 +5,9 @@ class DarkMoonAd {
     }
 
     animate = () => {
+
+        console.log(`hi`)
+
         let frame1 = {
             container: document.querySelector('.frame1'),
         } 
@@ -46,9 +49,23 @@ class DarkMoonAd {
             button: document.querySelector('.frame7__button')
         }
 
-        let tl = gsap.timeline();
+        let tl = gsap.timeline()
 
-        tl.to()
+        tl.to(
+            frame2.container, {
+                borderRadius: '0rem',
+                width: '240px',
+                height: '240px',
+                duration: 1.5,
+                ease: 'power2.inOut',
+                onComplete: function(){
+                    frame2.container.style.borderRadius = '0rem'
+                    frame2.container.style.width = '100%'
+                    frame2.container.style.height = '100%'
+                    frame2.text.style.opacity = '1'
+                },
+            }
+        )
 
         // tl.to(logoIMG, {y: 150, x: 300, duration: 1, ease: "power2.in"});
         // tl.to(logoIMG, {y: 0, x: 600, duration: 1, ease: "power2.out"});
