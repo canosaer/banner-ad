@@ -3,15 +3,84 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta http-equiv="x-ua-compatible" content="ie=edge" />
-		<title> </title>
+		<title> Buy Dark Moon </title>
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/5290a709ed.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="dist/css/main.css" />
 	</head>
 
 	<body>
+		<main class="display-grid">
+			<section class="banner">
+				<div class="frame1"></div>
+				<!-- just gray -->
 
+				<div class="frame2">
+					<h2 class="frame2__text">Dark Moon</h2>
+				</div>
+				<!-- white circle expands to replace gray
+				text is transparent and moves up and as it becomes opaque
+				text fades again and becomes transparent -->
+
+				<div class="frame3">
+					<div class="frame3__years-row"><span class="frame3__number">12</span>yrs.</div>
+					<p class="frame3__text">of design, development, and testing.</p>
+				</div>
+				<!-- white background pinholes as gray replaces white
+				all elements are transparent and move up as they become opaque
+				number goes from 0 to 12 
+				text fades back to transparent -->
+
+				<div class="frame4">
+					<div class="frame4__rating-row"><i class="frame4__star fas fa-star"></i><span class="frame4__rating">4.4</span></div>
+					<p class="frame4__text">average rating on Board Game Geek.</p>
+				</div>
+				<!-- rating-row replaces years-row
+				rating goes from 0.0 to 4.4
+				text is transparent and moves up as it becomes opaque
+				text fades back to transparent -->
+
+				<div class="frame5">
+					<div class="frame5__backers">7721</div>
+					<p class="frame5__text">backers to date.</p>
+				</div>
+				<!-- backers replaces rating-row
+				backers goes from 0 to 7721
+				text is transparent and moves up as it becomes opaque
+				text fades back to transparent -->
+
+				<div class="frame6">
+					<h1 class="frame6__logo">Dark Moon</h1>
+					<p class="frame6__text">The adventure begins.</p>
+				</div>
+				<!-- logo appears
+				white circle expands to replace gray background
+				logo is transparent and moves up as it becomes opaque
+				same for text but delayed from start of logo animation
+				text fades back to transparent, logo stays -->
+				
+				<div class="frame7">
+					<h1 class="frame7__logo">Dark Moon</h1>
+					<p class="frame7__text">Back this ground-breaking game for</p>
+					<div class="frame7__price-row">
+						<i class="frame7__dollar-sign fas fa-dollar-sign"></i>
+						<p class="frame7__price">50.00</p>
+					</div>
+					<p class="frame7__detail">game will be delivered December 2022</p>
+					<div class="frame7__button">Back Dark Moon</div>
+					<p class="frame7__terms">terms & conditions</p>
+				</div>
+				<!-- white background pinholes as gray replaces white
+				text, price-row, and detail are transparent and move up as they become opaque
+				offer details and button fade in from transparent (but don't move up) after the other elements are in place -->
+				
+				
+			</section>
+		</main>
+		
 		<script src="dist/js/main.js"></script>
 	</body>
 </html>

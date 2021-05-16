@@ -83,12 +83,12 @@ time,
 mark,
 audio,
 video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -103,132 +103,252 @@ hgroup,
 menu,
 nav,
 section {
-	display: block;
+  display: block;
 }
 
 body {
-	line-height: 1;
+  line-height: 1;
 }
 
 ol,
 ul {
-	list-style: none;
+  list-style: none;
 }
 
 blockquote,
 q {
-	quotes: none;
+  quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-	content: "";
-	content: none;
+  content: "";
+  content: none;
 }
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* 
 ==============================================
 CONTENT:	Project Name Here
-AUTHOR:		Your Name Here
+AUTHOR:		Eric Canosa
 ==============================================
 
 TABLE OF CONTENTS:
 
-0. Reset
-1. Main Layout
-2. Content
+0. Initialization
+1. Appearance
+2. Utility
 
 ==============================================
 */
-/* 0. Reset ================================= */
-/* 
-If you want to add partials, use Sass Modules via @use:
-@use 'variables';
-
-Usage: partial-name.variable/mixin/function-name:
-background: variables.$primary-color;
-*/
-/* 1. Main Layout ================================= */
-* {
-	box-sizing: border-box;
+/* 0. Initialization ========================= */
+/* 1. Appearance ============================= */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 body {
-	background: #2e3032;
+  background: whitesmoke;
+  font-family: "Lucida Sans", sans-serif;
 }
 
-/* 2. Content ================================= */
-.floating-box {
-	position: relative;
-	font-family: sans-serif;
-	width: 90%;
-	max-width: 500px;
-	margin: 140px auto;
-	padding: 30px 20px 30px 30px;
+.display-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  -ms-grid-rows: 100vh;
+  grid-template-rows: 100vh;
 }
-.floating-box .foreground {
-	position: relative;
-	z-index: 2;
-	transform: translateZ(100px);
+
+.display-grid > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
 }
-.floating-box .background {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	left: 0;
-	top: 0;
-	background: white;
-	z-index: 1;
-	transition: 0.2s;
-	transform: translateX(20px) perspective(600px) rotateY(15deg);
+
+.banner {
+  display: -ms-grid;
+  display: grid;
+  width: 120px;
+  height: 240px;
+  -ms-grid-row-align: center;
+  -ms-grid-column-align: center;
+  place-self: center center;
+  border: 1px solid #777;
+  position: relative;
+  overflow: hidden;
 }
-.floating-box:hover .background {
-	transform: translateX(-30px) perspective(600px) rotateY(-15deg);
+
+.frame1 {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: lightgray;
 }
-.floating-box .logo {
-	position: absolute;
-	top: -30px;
-	width: 60px;
-	z-index: 2;
-	transform: translateZ(100px);
-	transition: 0.3s;
+
+.frame2 {
+  display: none;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  -ms-grid-rows: 240px;
+  grid-template-rows: 240px;
 }
-.floating-box .logo:hover {
-	-ms-transform: rotate(-0.4turn);
-	    transform: rotate(-0.4turn);
+
+.frame2 > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
 }
-.floating-box h1 {
-	font-weight: 700;
-	font-size: 22pt;
-	margin: 15px 0;
+.frame2__text {
+  font-family: "Gugi", cursive;
+  -ms-grid-row-align: center;
+  -ms-grid-column-align: center;
+  place-self: center center;
+  font-size: 1.6rem;
+  text-align: center;
+  font-weight: bold;
 }
-.floating-box p {
-	color: #777;
-	line-height: 140%;
+
+.frame3 {
+  display: none;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  -ms-grid-rows: 6.6rem;
+  grid-template-rows: 6.6rem;
+  background: lightgray;
 }
-.floating-box p.github {
-	font-size: 0.8em;
+
+.frame3 > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
 }
-.floating-box p.github a {
-	opacity: 0.2;
-	transition: 0.3s;
+.frame3__years-row {
+  margin: 4.75rem 8% 0;
+  color: crimson;
+  font-size: 1.6rem;
+  font-weight: bold;
 }
-.floating-box p.github a:hover {
-	opacity: 1;
-	color: red;
+.frame3__number {
+  margin-right: 5px;
 }
-.floating-box code {
-	position: absolute;
-	top: 20px;
-	right: 20px;
-	font-size: 0.8em;
-	opacity: 0.2;
+.frame3__text {
+  margin: 0 10% 0;
+  color: crimson;
+  font-size: 0.9rem;
+  font-weight: bold;
+  line-height: 1.3;
 }
+
+.frame4 {
+  display: none;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  -ms-grid-rows: 6.6rem;
+  grid-template-rows: 6.6rem;
+  background: lightgray;
+}
+
+.frame4 > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+.frame4__rating-row {
+  margin: 4.75rem 8% 0;
+  color: crimson;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.frame4__star {
+  margin-right: 0.1rem;
+  font-size: 1.4rem;
+}
+.frame4__text {
+  margin: 0 10% 0;
+  color: crimson;
+  font-size: 0.9rem;
+  font-weight: bold;
+  line-height: 1.3;
+}
+
+.frame5 {
+  display: none;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  -ms-grid-rows: 6.6rem;
+  grid-template-rows: 6.6rem;
+  background: lightgray;
+}
+
+.frame5 > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+.frame5__backers {
+  margin: 4.75rem 8% 0;
+  color: crimson;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.frame5__text {
+  margin: 0 10% 0;
+  color: crimson;
+  font-size: 0.9rem;
+  font-weight: bold;
+  line-height: 1.3;
+}
+
+.frame6 {
+  display: none;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  -ms-grid-rows: 240px;
+  grid-template-rows: 240px;
+}
+
+.frame6 > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+.frame6__logo {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  font-family: "Gugi", cursive;
+  margin: 10% 5%;
+  font-size: 1rem;
+}
+.frame6__text {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  margin: 0 10% 0;
+  color: crimson;
+  font-size: 0.9rem;
+  font-weight: bold;
+  line-height: 1.3;
+  margin: auto;
+  width: 4.6rem;
+  text-align: center;
+}
+
+.frame7 {
+  display: -ms-grid;
+  display: grid;
+}
+
+/* 2. Utility ================================ */
 /*# sourceMappingURL=main.css.map */

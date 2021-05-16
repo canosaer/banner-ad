@@ -17,3 +17,25 @@
     @content;
   }
 }
+
+@mixin data-frame {
+	grid-template-columns: 1fr;
+	grid-auto-rows: auto;
+	grid-template-rows: 6.6rem;
+  background: lightgray;
+}
+
+@mixin data-heading {
+  margin: 4.75rem 8% 0;
+  color: crimson;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+@mixin data-text {
+  margin: 0 10% 0;
+  color: crimson;
+  font-size: 0.9rem;
+  font-weight: bold;
+  line-height: 1.3;
+}
