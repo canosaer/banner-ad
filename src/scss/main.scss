@@ -43,6 +43,13 @@ body{
 	border: 1px solid #777;
 	position: relative;
 	overflow: hidden;
+
+	&__logo{
+		@include mixins.logo-style;
+		position: absolute;
+		opacity: 0;
+		z-index: 2;
+	}
 }
 
 .frame1{
@@ -140,23 +147,42 @@ body{
 .frame6{
 	display: none;
 	// display: grid;
+	background: white;
 	grid-template-columns: 1fr;
 	grid-template-rows: 240px;
+	position: absolute;
+	width: 0rem;
+	height: 0rem;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 999rem;
 
-	&__logo{
-		grid-row: 1/2;
-		grid-column: 1/2;
-		@include mixins.logo-style;
-	}
-
-	&__text{
+	&__the, &__adventure, &__begins{
 		grid-row: 1/2;
 		grid-column: 1/2;
 		@include mixins.data-text;
-		margin: auto;
-		width: 4.6rem;
+		place-self: center center;
 		text-align: center;
+		opacity: 1;
 	}
+
+	&__the{
+		margin-bottom: 2.6rem;
+	}
+
+	&__begins{
+		margin-top: 2.6rem;
+	}
+
+	// &__text{
+	// 	grid-row: 1/2;
+	// 	grid-column: 1/2;
+	// 	@include mixins.data-text;
+	// 	margin: auto;
+	// 	width: 4.6rem;
+	// 	text-align: center;
+	// }
 }
 
 .frame7{
@@ -167,12 +193,8 @@ body{
   	background: lightgray;
 	z-index: 1;
 
-	&__logo{
-		@include mixins.logo-style;
-	}
-
 	&__text{
-		margin: 0 10% 0;
+		margin: 2.5rem 10% 0;
 		font-size: 0.9rem;
 		font-weight: bold;
 		line-height: 1.3;

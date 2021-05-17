@@ -184,6 +184,14 @@ body {
   position: relative;
   overflow: hidden;
 }
+.banner__logo {
+  font-family: "Gugi", cursive;
+  margin: 10% 5%;
+  font-size: 1rem;
+  position: absolute;
+  opacity: 0;
+  z-index: 2;
+}
 
 .frame1 {
   width: 100%;
@@ -328,28 +336,26 @@ body {
 
 .frame6 {
   display: none;
+  background: white;
   -ms-grid-columns: 1fr;
   grid-template-columns: 1fr;
   -ms-grid-rows: 240px;
   grid-template-rows: 240px;
+  position: absolute;
+  width: 0rem;
+  height: 0rem;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 999rem;
 }
 
 .frame6 > *:nth-child(1) {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
 }
-.frame6__logo {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1/2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1/2;
-  font-family: "Gugi", cursive;
-  margin: 10% 5%;
-  font-size: 1rem;
-}
-.frame6__text {
+.frame6__the, .frame6__adventure, .frame6__begins {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1/2;
@@ -361,9 +367,17 @@ body {
   font-size: 0.9rem;
   font-weight: bold;
   line-height: 1.3;
-  margin: auto;
-  width: 4.6rem;
+  -ms-grid-row-align: center;
+  -ms-grid-column-align: center;
+  place-self: center center;
   text-align: center;
+  opacity: 1;
+}
+.frame6__the {
+  margin-bottom: 2.6rem;
+}
+.frame6__begins {
+  margin-top: 2.6rem;
 }
 
 .frame7 {
@@ -374,13 +388,8 @@ body {
   background: lightgray;
   z-index: 1;
 }
-.frame7__logo {
-  font-family: "Gugi", cursive;
-  margin: 10% 5%;
-  font-size: 1rem;
-}
 .frame7__text {
-  margin: 0 10% 0;
+  margin: 2.5rem 10% 0;
   font-size: 0.9rem;
   font-weight: bold;
   line-height: 1.3;

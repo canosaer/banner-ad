@@ -8,6 +8,8 @@ class DarkMoonAd {
 
         console.log(`hi`)
 
+        let logo = document.querySelector('.banner__logo')
+
         let frame1 = {
             container: document.querySelector('.frame1'),
         } 
@@ -39,12 +41,12 @@ class DarkMoonAd {
         }
         let frame6 = {
             container: document.querySelector('.frame6'),
-            logo: document.querySelector('.frame6__logo'),
-            text: document.querySelector('.frame6__text'),
+            the: document.querySelector('.frame6__the'),
+            adventure: document.querySelector('.frame6__adventure'),
+            begins: document.querySelector('.frame6__begins'),
         }
         let frame7 = {
             container: document.querySelector('.frame7'),
-            logo: document.querySelector('.frame7__logo'),
             text: document.querySelector('.frame7__text'),
             priceRow: document.querySelector('.frame7__price-row'),
             dollarSign: document.querySelector('.frame7__dollar-sign'),
@@ -73,7 +75,7 @@ class DarkMoonAd {
                 duration: 1,
                 ease: 'power2.inOut',
                 opacity: 0,
-                marginTop: `auto`
+                marginTop: 'auto',
             }
         )
         tl.from(
@@ -190,15 +192,124 @@ class DarkMoonAd {
         )
         tl.to(
             [frame5.backers, frame5.text], {
+                duration: 2,
+                ease: 'power2.inOut',
+                opacity: 0,
+            }
+        )
+        tl.to(
+            logo, {
+                duration: 0.5,
+                ease: 'power2.inOut',
+                opacity: 1,
+                onComplete: function(){
+                    frame6.container.style.display = 'grid'
+                },
+            } 
+        )
+        tl.to(
+            frame6.container, {
+                width: '300px',
+                height: '300px',
+                duration: 1,
+                ease: 'power2.inOut',
+                onComplete: function(){
+                    frame6.container.style.borderRadius = '0rem'
+                    frame6.container.style.width = '100%'
+                    frame6.container.style.height = '100%'
+                }
+            }
+        )
+        tl.from(
+            frame6.the, {
+                duration: 1,
+                ease: 'power2.inOut',
+                opacity: 0,
+                marginTop: 'auto',
+            }
+        )
+        tl.from(
+            frame6.adventure, {
+                duration: 1,
+                ease: 'power2.inOut',
+                opacity: 0,
+                marginTop: 'auto',
+            }
+        )
+        tl.from(
+            frame6.begins, {
+                duration: 1,
+                ease: 'power2.inOut',
+                opacity: 0,
+                marginTop: 'auto',
+            }
+        )
+        tl.to(
+            [frame6.the, frame6.adventure, frame6.begins], {
+                delay: 0.5,
                 duration: 1,
                 ease: 'power2.inOut',
                 opacity: 0,
                 onComplete: function(){
-                    frame5.container.style.display = 'none'
-                    frame6.container.style.display = 'grid'
+                    frame6.container.style.borderRadius = '999rem'
+                    frame6.container.style.width = '300px'
+                    frame6.container.style.height = '300px'
                 },
             }
         )
+        tl.to(
+            frame6.container, {
+                width: '0px',
+                height: '0px',
+                duration: 1,
+                ease: 'power2.inOut',
+                onComplete: function(){
+                    frame5.container.style.display = 'none'
+                    frame6.container.style.display = 'none'
+                    frame7.container.style.display = 'grid'
+                }
+            }
+        )
+        tl.from(
+            frame7.text, {
+                duration: 0.9,
+                ease: 'power2.inOut',
+                opacity: 0,
+                marginTop: '175px',
+            }
+        )
+        tl.from(
+            frame7.priceRow, {
+                duration: 0.9,
+                ease: 'power2.inOut',
+                opacity: 0,
+                marginTop: '175px',
+            }
+        )
+        tl.from(
+            frame7.detail, {
+                duration: 0.9,
+                ease: 'power2.inOut',
+                opacity: 0,
+                marginTop: '175px',
+            }
+        )
+        tl.from(
+            frame7.button, {
+                duration: 1,
+                ease: 'power2.inOut',
+                opacity: 0,
+            }
+        )
+
+
+        // tl.to(
+        //     logo, {
+        //         duration: 1,
+        //         ease: 'power2.inOut',
+        //         opacity: 1,
+        //     } 
+        // )
 
         //expand container - display logo oncomplete, then move up the text
         
